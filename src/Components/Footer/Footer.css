@@ -1,0 +1,18 @@
+.footerContainer{
+    padding:60px !important;
+}
+@media only screen and (max-width: 600px) {
+    .footerContainer h1{
+        font-size: medium !important;
+    }
+    .footerContainer p {
+        font-size: smaller !important;
+    };
+    .sellNowBtn
+    {
+        width: 20px !important;
+    }
+    .instruct p {
+        font-size: 10px !important;
+    };
+}

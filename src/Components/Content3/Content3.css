@@ -1,0 +1,36 @@
+.content3frame
+{
+    padding: 100px !important;
+    color:black !important;
+}
+.move
+{
+    margin-top: 10px !important ;
+    background-color: black !important;
+}
+.accordion
+{
+    margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .content3frame{
+        padding: 30px !important;
+    }
+    .content3frames{
+        display: flex !important;
+        flex-direction: column !important;
+        font-size: small !important;
+    }
+    .bringing
+    {
+        font-size: medium !important;
+        text-align: center !important;
+    }
+    .accordionItem .accordionHead
+    {
+        font-size: 5px !important;
+        color: blue !important;
+    }
+    
+
+}

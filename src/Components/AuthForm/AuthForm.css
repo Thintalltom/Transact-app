@@ -1,0 +1,31 @@
+.formContainer
+{
+    width: 500px !important;
+    padding: 50px!important;
+    box-sizing: content-box;
+   
+    margin: 100px;
+    align-items: center;
+
+}
+@media only screen and (max-width: 600px) {
+    .change
+    {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+.formContainer
+{
+    width: 250px !important;
+    padding: 35px !important;
+    box-sizing: content-box;  
+    margin: 0px;
+    align-items: center;
+    font-size: smaller !important;
+    margin-top: 20% !important;
+}
+.signupimg
+{
+    display: none !important;
+}
+}

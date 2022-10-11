@@ -1,0 +1,30 @@
+.productContainer
+{
+    padding: 40px !important;
+    background-color: rgba(119, 119, 118, 0.068);
+    height: 100vh;
+}
+.productContainer2
+{
+    padding: 10px !important;
+    border-radius: 30px !important;
+    width:1000px;
+}
+.formContainer
+{
+    width: 200px;
+}
+@media only screen and (max-width: 600px) {
+    .productContainer
+{
+    padding: 20px !important;
+    background-color: rgba(255, 228, 196, 0.123);
+    height: 100vh;
+}
+.productContainer2
+{
+    padding: 20px !important;
+    border-radius: 30px !important;
+    margin-top: 60px;
+}
+}

@@ -1,0 +1,11 @@
+.fluid
+{
+    padding: 50px;
+    background-color: black !important;
+}
+@media only screen and (max-width: 600px) {
+    .dayday
+    {
+        font-size: small!important; 
+    }
+}

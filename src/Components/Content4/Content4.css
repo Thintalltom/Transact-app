@@ -1,0 +1,15 @@
+@media only screen and (max-width: 600px) {
+    .content4frame
+    {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .access
+    {
+        color:  black !important;
+        font-size: medium !important;
+        text-align: center !important;
+    }
+}
