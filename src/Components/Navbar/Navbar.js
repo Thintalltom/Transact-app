@@ -5,7 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import './Navbar.css'
+
 const Topbar = () => {
     
   return (
@@ -17,7 +18,7 @@ const Topbar = () => {
         <Nav className="mx-auto gap-5 text-dark">
           <Nav.Link href="#home" className="text-dark">Home</Nav.Link>
           <Nav.Link href="#link" className="text-dark">Feature</Nav.Link>
-          <Link to="/authForm">
+          <Link to="/authForm" className="text-decoration-none">
           <Nav.Link href="#link" className="text-dark">Login</Nav.Link>
           </Link>
           

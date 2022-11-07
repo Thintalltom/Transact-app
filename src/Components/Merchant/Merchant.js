@@ -11,7 +11,9 @@ const Merchant = ({
     setPhoneNumber,
     save, 
     phoneNumber,
-    setSave
+    setSave,
+    companyinfo,
+    setCompanyInfo
 }) => {
 
     const navigate = useNavigate()
@@ -19,6 +21,10 @@ const Merchant = ({
     {
             console.log(e.target.value)
             setFirstName(e.target.value)
+    }
+    const companyInfohandler = (e) => {
+      console.log(e.target.value)
+      setCompanyInfo(e.target.value)
     }
 
     const lastNamehandler = (e) =>
@@ -44,11 +50,16 @@ const Merchant = ({
         {
             firstname: firstName, lastname: lastName, companyname: companyName, phoneno: phoneNumber
         }]);
-        console.log(save)
         if(save != null)
         {
-        navigate('/dashboard')
+          navigate('/dashboard')
         }
+        console.log(save)
+        localStorage.setItem('Name', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('compName', companyName);
+        localStorage.setItem('Contact', phoneNumber);
+        localStorage.setItem('Company info', companyinfo);
     }
 
 
@@ -86,6 +97,13 @@ const Merchant = ({
         />
       </Form.Group>
 
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Company Information</Form.Label>
+        <Form.Control type="email" placeholder="Enter company info"  value={companyinfo}
+        onChange={companyInfohandler}
+        />
+      </Form.Group>
+
       <div className='d-flex justify-content-between'>
       <Button variant="primary" type="submit"
       onClick={saveHandler}
@@ -94,7 +112,6 @@ const Merchant = ({
         Save
       </Button>
       </div>
-     
       
     </Form>
     </Container>

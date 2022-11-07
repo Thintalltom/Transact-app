@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap';
-import Phone from '../../Pictures/Phone.png'
+import Phone from '../../Pictures/phone.png'
 import './Content1.css'
 const Content1 = () => {
   return (

@@ -1,30 +1,68 @@
-.productContainer
-{
-    padding: 40px !important;
-    background-color: rgba(119, 119, 118, 0.068);
-    height: 100vh;
+
+.productimg :hover{
+    opacity: 0.8 !important;
+    cursor: pointer !important;
+    color: black !important;
 }
-.productContainer2
+ul
 {
-    padding: 10px !important;
-    border-radius: 30px !important;
-    width:1000px;
+    
+    padding: 0;
 }
-.formContainer
+.text
 {
-    width: 200px;
+    font-size: smaller !important;
 }
+ul li a:hover{
+    cursor: pointer;
+    background-color:rgba(0, 0, 0, 0);
+    color:red !important;
+}
+.variant2
+{
+
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    border: 1px solid black;
+    padding: 50px !important;
+    border-style: dashed !important;
+}
+
+
 @media only screen and (max-width: 600px) {
     .productContainer
 {
-    padding: 20px !important;
+    padding: 0px !important;
     background-color: rgba(255, 228, 196, 0.123);
-    height: 100vh;
+    height: 0vh;
 }
 .productContainer2
 {
-    padding: 20px !important;
-    border-radius: 30px !important;
-    margin-top: 60px;
+    padding: 0px !important;
+    border-radius: 0px !important;
+    margin-top: 20px;
+    width: 0px !important;
 }
+.tableauhold{
+    overflow: scroll !important;
+    font-size: medium !important;
+}
+.formContainer
+{
+    width: 0px;
+}
+.tableau{
+    width: 100px !important;
+}
+.straighten
+{
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px !important;
+}
+.down{
+    margin-top: 1rem !important;
+}
+
 }

@@ -7,7 +7,8 @@ import { Content3List } from './Content3List';
 const Content3 = () => {
   return (
     <Container className="content3frame">
-        <div className='d-flex content3frames'>
+        <h2 className='text-center text-dark h2'>Why Choose Us?</h2>
+        <div className='d-flex content3frames pt-3'>
             <div>
                 <h3 className='bringing'>Bringing to you the best Customer experince and Satisfaction</h3>
                 {Content3List.map((content) => (

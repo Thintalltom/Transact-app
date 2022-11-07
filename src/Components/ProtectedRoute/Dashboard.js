@@ -1,24 +1,29 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useUserAuth } from '../../Context/UserAuthContext';
+import {Container, Row} from 'react-bootstrap'
 import Menu from './Menu';
-import Merchant from '../Merchant/Merchant';
-import Productinfo from '../ProductInfo/Productinfo';
-const Dashboard = ({children, setProduct, setPrice, save, setDescription, product, setTodos, todos, price, description}) => {
-    const navigate = useNavigate();
-    let { user } = useUserAuth();
-    console.log(user)
-    if(!user) {
-        return navigate('/authForm')
-    }
-    
-
+import { toast } from 'react-toastify'
+import { useUserAuth } from '../../Context/UserAuthContext'
+const Dashboard = ({ save, order, orderInfo, setOrderInfo, setOrder }) => {
+  const { logout, user } = useUserAuth();
+  const handleLogout = async  () => {
+      try {
+          return logout()
+         
+      } catch (error) {
+          console.log(error.message)
+      }
+  }
   return (
-      <div>
-           <Menu save={save} />
-          
-      </div>
+    
+        <Container fluid>
+            <Row>
+            <Menu save={save} handleLogout={handleLogout} user={user}  order={order} orderInfo={orderInfo} setOrderInfo={setOrderInfo}  setOrder ={setOrder}/>
+            </Row>
+        </Container>
+           
+         
+    
 
   )
 }

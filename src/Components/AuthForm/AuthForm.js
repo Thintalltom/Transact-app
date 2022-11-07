@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import {Button, Form, Container, Alert} from 'react-bootstrap';
+import {Button, Form, Container, Alert, Spinner} from 'react-bootstrap';
 import {Link,  useNavigate} from 'react-router-dom'
 import Signup from '../../Pictures/Signup.png'
 import { useUserAuth } from '../../Context/UserAuthContext';
+import { toast } from 'react-toastify'
 import './AuthForm.css'
 
 const AuthForm = () => {
@@ -11,25 +12,36 @@ const AuthForm = () => {
   const { signUp } = useUserAuth();
   const [error, setError] = useState("")
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("")
     try {
       await signUp(email, password)
       navigate("/loginForm")
+      toast.success('You have successfully signed up')
     } catch (err) {
-      setError(err.message)
+    
+      toast.error('Error')
     
     }
   };
+
+  const fetchInfo = () => 
+     {
+       setLoading(true)
+     }
   return (
+    <>
     <Container className="d-flex change">
+      <Link to='/' className='mt-4'>
+      <Button className='backbtn'>Back</Button>
+      </Link>
       <img src={Signup}  className="w-50 signupimg"/>
-    
- 
+    <div className='container moove'>
     <Form className='formContainer' onSubmit={handleSubmit}>
     <h4 className='text-center'>Sign Up </h4>
-    {error && <Alert variant="danger" >{error}</Alert>}
+    
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email"
@@ -48,7 +60,7 @@ const AuthForm = () => {
        onChange={(e) => setPassword(e.target.value)}
       />
     </Form.Group>
-    <Button variant="primary" type="submit" className="text-center justify-content-center align-items-center">
+    <Button variant="primary" type="submit" className="text-center justify-content-center align-items-center" onClick={fetchInfo}>
       Sign Up
     </Button>
     <Form.Group>
@@ -62,7 +74,9 @@ const AuthForm = () => {
     </Form.Text>
     </Form.Group>
   </Form>
+  </div>
   </Container>
+  </>
   )
 }
 

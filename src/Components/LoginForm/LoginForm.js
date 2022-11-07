@@ -3,6 +3,7 @@ import {Button, Form, Alert, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'
 import { useUserAuth } from '../../Context/UserAuthContext';
 import Login from '../../Pictures/login.png'
+import { toast } from 'react-toastify'
 
 const LoginForm = () => {
 
@@ -16,17 +17,25 @@ const LoginForm = () => {
     setError("")
     try {
       await logIn(email, password)
-      navigate("/Merchant")
+      navigate("/dashboard")
+      toast.success('Welcome back')
     } catch (error) {
-      setError(error.message)
+      toast.error('Bad user credentials')
     }
+    localStorage.setItem('email', email)
+    localStorage.setItem('password', password)
   }
   return (
 
     <Container className="d-flex change">
+      <Link to='/' className='mt-4'>
+      <Button>Back</Button>
+      </Link>
+     
        <img src={Login}  className="w-50 signupimg"/>
     <Form className='formContainer' onSubmit={handleSubmit}>
         <h4 className='text-center'>Login Form</h4>
+      
         {error && <Alert variant="danger" >{error}</Alert>}
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>

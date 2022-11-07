@@ -1,18 +1,19 @@
 import React from 'react'
-import { Table, Container, Button } from 'react-bootstrap'
+import { Table, Container } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import Menu from '../ProtectedRoute/Menu'
+import {Button} from '@mui/material'
+import { MdClear, MdLocalGroceryStore, MdAdd } from "react-icons/md";
+
+import './ProductCart.css'
 const Productinfo = ({todos, setTodos}) => {
-    console.log(todos)
+ 
   return (
-   <Container fluid>
-    
+  
       <Container className='productlist'>
-      <Link to="/products">
-        <Button className='text-end float-end m-4  classProduct'>Add Products</Button>
+        <Link to="/products">
+        <Button className='text-end float-end m-4  classProduct btn-dark' variant='outlined' color='error'> <MdAdd /> Add Products</Button>
         </Link> 
-            <h6>Product List</h6>
-             <Table striped bordered hover size='sm'>
+             <Table striped bordered hover size='sm' className='tableau'>
              <thead>
                <tr>
                  <th>Id</th>
@@ -30,11 +31,15 @@ const Productinfo = ({todos, setTodos}) => {
                  <td>{todo.description}</td>
                  <td>{todo.price}</td>
                 <td>{todo.image}</td>
-                 <td>
-                     <Link to="/productCart">
-                     <Button>Market Place</Button>
+                 <td >
+                   <div className='d-flex'>
+                   <Link to="/productCart">
+                     <Button className='mkbtn btn-dark'> <MdLocalGroceryStore /></Button>
                      </Link>
-                 
+                     <Button className='btn-white bg-secondary mkbtn text-dark border-white' onClick={() =>  setTodos(todos.filter((el) =>  el.id !== todo.id)) }>
+                     <MdClear />
+                     </Button>
+                   </div>
                  </td>
                </tr>
              </tbody>
@@ -42,7 +47,7 @@ const Productinfo = ({todos, setTodos}) => {
            </Table>
       
     </Container>
-    </Container>
+  
 
   )
 }

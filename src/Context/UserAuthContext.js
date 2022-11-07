@@ -6,15 +6,17 @@ import {
     onAuthStateChanged
 } from "firebase/auth";
 import { auth } from '../Firebase/Firebase';
-
+const userlocalStorage = JSON.parse(localStorage.getItem('user'))
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
-const [user, setUser] = useState("");
-
+const [user, setUser] = useState(userlocalStorage);
+useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(user))
+  }, [user])
     function signUp(email, password){
         return createUserWithEmailAndPassword(auth, email, password);
-        console.log(email)
+        
     }
     
 
@@ -27,13 +29,15 @@ const [user, setUser] = useState("");
     {
         return signOut(auth)
     }
+    
     useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser)
      });
       return () => {
         unsubscribe();
-      }
+      } 
+      
     }, []);
     
 

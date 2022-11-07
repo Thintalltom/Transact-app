@@ -1,5 +1,6 @@
 .footerContainer{
-    padding:60px !important;
+    padding:50px !important;
+    margin-top: 10px !important;
 }
 @media only screen and (max-width: 600px) {
     .footerContainer h1{
@@ -15,4 +16,13 @@
     .instruct p {
         font-size: 10px !important;
     };
+    .footerContainer{
+        padding:50px !important;
+        margin-top: 10px !important;
+    }
+    .soContain
+    {
+        display: flex;
+        flex-direction: row;
+    }
 }

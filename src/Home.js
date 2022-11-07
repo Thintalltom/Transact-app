@@ -4,6 +4,7 @@ import Content1 from './Components/Content1/Content1'
 import Content2 from './Components/Content2/Content2'
 import Content3 from './Components/Content3/Content3'
 import Content4 from './Components/Content4/Content4'
+import Content5 from './Components/Content5/Content5'
 import Footer from './Components/Footer/Footer'
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
    <Content2 />
    <Content3 />
    <Content4 />
+   <Content5 />
    <Footer />
     </div>
   )

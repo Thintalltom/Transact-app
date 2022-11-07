@@ -13,19 +13,29 @@
     {
         display: flex !important;
         flex-direction: column !important;
+        background-color: rgba(0, 0, 255, 0.281) !important;
+        width: 100vw !important;
+        height: 100vh !important;
+       
     }
 .formContainer
 {
     width: 250px !important;
-    padding: 35px !important;
+    padding: 0px !important;
     box-sizing: content-box;  
-    margin: 0px;
-    align-items: center;
+    margin: -0px;
+    align-items: center !important;
     font-size: smaller !important;
     margin-top: 20% !important;
+    justify-content: center !important;
 }
 .signupimg
 {
     display: none !important;
 }
+.moove{
+    align-items: center !important;
+    justify-content: center !important;
+}
+
 }
